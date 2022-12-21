@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class Capitulo{
+    String nome;
+    String texto;
+    String v;
+    String d;
+    Times times;
+    int animação;
+    Scanner escolha;
+
+
+    Capitulo(String nome,
+             String texto,
+             String v,
+             String d,
+             Times times,
+             int animação,
+             Scanner escolha)
+    {
+            this.nome = nome;
+            this.texto = texto;
+            this.v = v;
+            this.d = d;
+            this.times = times;
+            this.animação = animação;
+            this.escolha = escolha;
+
+    }
+
+    void mostrar()
+    {
+        System.out.println(this.nome);
+        System.out.println(this.texto);
+        System.out.println("-" +this.v);
+        System.out.println("-" +this.d);
+        this.times.animação(this.animação);
+    }
+
+    
+
+    
+     
+     
+    int winlose()
+    {
+        
+        int num = -1;
+
+      if(v != null && d != null ){
+
+        Scanner escolha = new Scanner(System.in);
+        String escolher = escolha.nextLine();
+
+        if(escolher.equals(v)){
+            num = 1;
+        }
+        
+        else if(escolher.equals(d)){
+
+            num = 2;
+        }
+
+      }
+    return num;
+    }
+}
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+
