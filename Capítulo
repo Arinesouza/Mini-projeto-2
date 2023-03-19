@@ -3,78 +3,66 @@ import java.util.Scanner;
 public class Capitulo{
     String nome;
     String texto;
-    String v;
-    String d;
     Times times;
     int animação;
+    String[] escolhas;
     Scanner escolha;
 
 
     Capitulo(String nome,
              String texto,
-             String v,
-             String d,
              Times times,
              int animação,
+             String[] escolhas,
              Scanner escolha)
     {
             this.nome = nome;
             this.texto = texto;
-            this.v = v;
-            this.d = d;
             this.times = times;
             this.animação = animação;
+            this.escolhas = escolhas;
             this.escolha = escolha;
 
     }
+
 
     void mostrar()
     {
         System.out.println(this.nome);
         System.out.println(this.texto);
-        System.out.println("-" +this.v);
-        System.out.println("-" +this.d);
         this.times.animação(this.animação);
+    
+
+     if(this.escolhas != null ){
+
+        for(String esc : escolhas){
+            System.out.println(" - " +esc);
+        }
     }
-
     
-
-    
-     
-     
-    int winlose()
+    }
+        
+        int winlose()
     {
-        
-        int num = -1;
+        int escolh=-1;
+        if(escolhas!=null){
+        while(escolh == -1){
+            System.out.print(" ");
+            String pes = escolha.nextLine();
 
-      if(v != null && d != null ){
+        for(int i=0;i<escolhas.length;i++){
+            
+            if(pes.equals(escolhas[i])){
+                escolh = i;
 
-        Scanner escolha = new Scanner(System.in);
-        String escolher = escolha.nextLine();
-
-        if(escolher.equals(v)){
-            num = 1;
+            }
         }
-        
-        else if(escolher.equals(d)){
-
-            num = 2;
-        }
-
+       
       }
-    return num;
+      
+
+        }
+        return escolh;
     }
-}
-
-
     
-
-    
-
-    
-    
-    
-
-    
-
-
+}  
