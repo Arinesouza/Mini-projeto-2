@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Capitulo{
@@ -5,7 +6,7 @@ public class Capitulo{
     String texto;
     Times times;
     int animação;
-    String[] escolhas;
+    ArrayList<Escolha> escolhas;
     Scanner escolha;
 
 
@@ -13,15 +14,14 @@ public class Capitulo{
              String texto,
              Times times,
              int animação,
-             String[] escolhas,
              Scanner escolha)
     {
             this.nome = nome;
             this.texto = texto;
             this.times = times;
             this.animação = animação;
-            this.escolhas = escolhas;
             this.escolha = escolha;
+            this.escolhas = new ArrayList<Escolha>();
 
     }
 
@@ -33,11 +33,13 @@ public class Capitulo{
         this.times.animação(this.animação);
     
 
-     if(this.escolhas != null ){
+     if(this.escolhas.size() > 0 ){
 
-        for(String esc : escolhas){
-            System.out.println(" - " +esc);
+        for(Escolha esc : escolhas){
+            System.out.println(" - " +esc.texto);
         }
+        int escolh = winlose();
+        this.escolhas.get(escolh).proximo.mostrar();
     }
     
     }
@@ -50,9 +52,10 @@ public class Capitulo{
             System.out.print(" ");
             String pes = escolha.nextLine();
 
-        for(int i=0;i<escolhas.length;i++){
+        for(int i=0;i<escolhas.size();i++){
             
-            if(pes.equals(escolhas[i])){
+            if(pes.equals(escolhas.get(i).texto))
+            {
                 escolh = i;
 
             }
@@ -66,3 +69,17 @@ public class Capitulo{
     }
     
 }  
+
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+

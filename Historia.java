@@ -2,12 +2,11 @@ import java.util.Scanner;
 
 
 
-
-    public class Historia {
+public class Historia {
        
-      public static Scanner escolha;
+  public static Scanner escolha;
 
-      public static void main(String[] args) {
+    public static void main(String[] args) {
             
 
             System.out.print("\n Estamos na Copa do Mundo 2014. Após uma copa surpreedente e favoritas eliminadas na fase de grupos"+
@@ -30,27 +29,12 @@ import java.util.Scanner;
                                               "\n Vamos agora acompanhar o jogo de Brasil x Alemanha. O Brasil sai do jogo com a ",
                                               Brasil, 
                                               200,
-                                              new String[]{"Vitoria mesmo com os desfalques.", 
-                                              "Derrota humilhante de 7x1."},
                                               escolha
                                               );
 
             //----------------------------SEMIFINAL-------------------------------------
             semifinal.mostrar();
-            int partida = semifinal.winlose(); 
                      
-
-            if(partida == 0){
-               System.out.println("\n É impressioante o Brasil bate a Alemanha e está na final!" );
-         
-               System.out.println(" deixa o goleiro na saudade e manda a Alemanha pra casa.");
-               Brasil.ganhar();
-               System.out.println("\n A animação da torcida aumentou de 200% para " + Brasil.animação+"%");
-                
-               System.out.println("\n Agora temos informações que Argentina venceu a Holanda nos pênaltis."+
-               " Portanto, também está na final. Uma final épica sulamericana entre Brasil e Argentina"+
-               "\n Estamos na grande final da copa do mundo 2014, "+
-               "onde se enfrenta os dois times da América do Sul: Brasil x Argentina.");
 
                // --------------------------- FINAL ----------------------------
 
@@ -59,68 +43,76 @@ import java.util.Scanner;
                "\n Estamos aqui na partida da final da Copa do Mundo 2014, Brasil x Argentina. Jogo de gigantes. A seleção brasileira sai do jogo com a ",
                Brasil, 
                300,
-               new String[]{"Vitoria com estadio lotado e se torna hexa.", "Derrota! O sonho do hexa escorre pelas as mãos e os argentinhos comemoram."},
                escolha);
                fin.mostrar();
-               int parti = fin.winlose();               
-
                
-               if(parti == 1){
-                  System.out.println(" \n O Brasil perde na final para Argentina com o placar de 1x0.");
-                 
-                  Brasil.perder();
-                  System.out.println("A animação da torcida cai de 300% para "+Brasil.animação+"%");
-
-                }
-                else if(parti == 0){
-                  
-                  System.out.println(" O Brasil supera a Argentina e é o campeão do mundo 2014");
-                  Brasil.ganhar();
-                  System.out.println(" A animação da torcida atinge o máximo, passa de 300% para" +Brasil.animação+"%"
-                  );
-               }
-
-                
-                }else if(partida == 1){
-               System.out.println(" \n O Brasil perde para Alemanha. ");
                
-               Brasil.perder();
-               System.out.println("A animação da torcida cai de 200% para "+Brasil.animação+"%");
-
+              
                // ---------------------- TERCEIRO LUGAR -----------------------------
                
                Capitulo terceirolugar = new Capitulo("\n Terceiro Lugar", 
                                                     "\n Estamos aqui no jogo de disputa pelo terceiro lugar entre Brasil x Holanda. A seleção brasileira termina o jogo com a ",
                                                      Brasil, 
                                                      100,
-                                                     new String[]{"Vitoria em um jogo impressionante que terminou nos penaltis.", "Derrota! Robben marca um golaço e é o craque do jogo"},
                                                      escolha);
                terceirolugar.mostrar();
-               int part = terceirolugar.winlose();
 
-               if(part == 0 ){
-                  System.out.println("\n O Brasil fica em terceiro lugar na Copa do Mundo 2014.");
-                 
-                  System.out.println(" O Brasil bate a Holanda.");
-                  Brasil.ganhar();
-                  System.out.print("A animação da torcida sobe de 100% para "+Brasil.animação+"%");
-               }
-               if(part == 1){
-                  System.out.println("\n O Brasil perde para Holanda e Holanda fica com o terceiro lugar.");
-                 
-                  Brasil.perder();
-                  System.out.println(" A animação da torcida esgota, de 100% fomos para "+Brasil.animação+"%. Que fase!");
- 
+               // --------------------- CAMPEÃO --------------------
+               Capitulo campeao = new Capitulo("\n É campeão",
+                                               "\n Vitória lindíssima em cima dos Aregntinos e o Brasil é hexa"+
+                                               "\n Essa foi a Copa Mundo 2014, meus amigos! Muitíssimo obrigado pela a presença"+
+                                               " \n Nos vemos em 2018 na Rússia. Até mais!", 
+                                               Brasil,
+                                              400, 
+                                              null);
+                  campeao.mostrar();
 
-               }
+                //--------------------- Vice Campeão ----------------------
+                Capitulo vicecampeao = new Capitulo("Vice Campeão", 
+                                                    "\n Brasil perde pra Argentina e o Hexa escorre pela as mãos"+
+                                                    "\n Encerramos aqui no Maracanã a Copa Mundo 2014 em 2º lugar"+
+                                                    "\n Argentina campeã da copa de mundo 2014."+
+                                                    "\n Nos veremos novamente em 2018 na Rússia. Até mais!", 
+                                                    Brasil, 
+                                                    200, 
+                                                    null);
+                  vicecampeao.mostrar();
 
-            }
+                  //------------------ Ganha terceiro lugar -------------------
+                  Capitulo ganharterceirolugar = new Capitulo("Vitória espetacular em cima da Hoalanda", 
+                                                              "\n O Brasil bate a Holanda e fica em terceiro lugar na Copa do Mundo 2014"+
+                                                              "\n Apesar de perdemos o hexa, conseguimos ficar no pódio"+
+                                                              "\n Essa foi a Copa do Mundo 2014 "+
+                                                              "\n Ficamos por aqui e nos encontraremos novamente em 4 anos"+
+                                                              "\n Um grande abraço até mais",
+                                                               Brasil, 
+                                                               200, 
+                                                                null);
+                  ganharterceirolugar.mostrar();
+              //------------------------- Perde terceiro lugar ---------------------------
+              Capitulo perderterceirolugar = new Capitulo("O Brasil perde também o terceiro lugar", 
+                                                          "\n Após a derrota humilhante de 7x1 destruindo o sonho do hexa"+
+                                                          "\n O Barsil perde também o terceiro lugar com placar de 3x0 para a Holanda"+
+                                                          "\n A seleção já não é mais a mesma que mostrava garra no começo da Copa"+
+                                                          "\n Holanda leva o terceiro lugar e conquista o pódio junto com Alemnha e Argentina"+
+                                                          "\n Essa foi a Copa do Mundo 2014. Espero vocês na Rússia 2018. Até mais!",
+                                                           Brasil, 
+                                                           0, 
+                                                           null);
 
-                  System.out.println("\n Essa foi a Copa Mundo 2014, meus amigos! Muitíssimo obrigado pela a presença"+
-                  " Nos vemos em 2018 na Rússia. Até mais!");
+                   perderterceirolugar.mostrar();                                        
+                  Capitulo raiz = semifinal;
+                  semifinal.escolhas.add(new Escolha("Vitoria mesmo com os desfalques.",fin));
+                  semifinal.escolhas.add(new Escolha("Derrota humilhante de 7x1.",terceirolugar));
+                  fin.escolhas.add(new Escolha("Vitoria com estadio lotado.", campeao));
+                  fin.escolhas.add(new Escolha("Derrota decepcionate de 1x0.", vicecampeao));
+                  terceirolugar.escolhas.add(new Escolha("Vitoria com gol lindo de Renato Augusto", ganharterceirolugar));
+                  terceirolugar.escolhas.add(new Escolha("Derrota com placar de 3x0", perderterceirolugar));
+                  raiz.mostrar();
                   escolha.close();     
 
               }
-      }      
+            }
+             
    
       
