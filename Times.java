@@ -1,25 +1,33 @@
 
+
 public class Times {
-   String nome;
-   int animação;
+   private String nome;
+   private int animação;
    Times()
 
    {
 
    }
 
-   Times(String nome, int animação){
+   public Times(String nome, int animação){
     this.nome = nome;
     this.animação = animação;}
 
-   void ganhar(){
+     void ganhar(){
       this.animação =animação + 100;
 
    }
 
-   void perder(){
+    void perder(){
       this.animação =animação - 100;
 
    }
+
+public void animação(int animação2) {
+}
+
+public String getnome(){
+   return this.nome;
+}
    
 }

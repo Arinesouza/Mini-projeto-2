@@ -44,9 +44,7 @@ public class Historia {
                Brasil, 
                300,
                escolha);
-               fin.mostrar();
-               
-               
+               fin.mostrar();               
               
                // ---------------------- TERCEIRO LUGAR -----------------------------
                
@@ -56,6 +54,7 @@ public class Historia {
                                                      100,
                                                      escolha);
                terceirolugar.mostrar();
+               Brasil.perder();
 
                // --------------------- CAMPEÃO --------------------
                Capitulo campeao = new Capitulo("\n É campeão",
@@ -66,6 +65,7 @@ public class Historia {
                                               400, 
                                               null);
                   campeao.mostrar();
+                  Brasil.ganhar();
 
                 //--------------------- Vice Campeão ----------------------
                 Capitulo vicecampeao = new Capitulo("Vice Campeão", 
@@ -77,6 +77,7 @@ public class Historia {
                                                     200, 
                                                     null);
                   vicecampeao.mostrar();
+                  Brasil.perder();
 
                   //------------------ Ganha terceiro lugar -------------------
                   Capitulo ganharterceirolugar = new Capitulo("Vitória espetacular em cima da Hoalanda", 
@@ -89,6 +90,7 @@ public class Historia {
                                                                200, 
                                                                 null);
                   ganharterceirolugar.mostrar();
+                  Brasil.ganhar();
               //------------------------- Perde terceiro lugar ---------------------------
               Capitulo perderterceirolugar = new Capitulo("O Brasil perde também o terceiro lugar", 
                                                           "\n Após a derrota humilhante de 7x1 destruindo o sonho do hexa"+
@@ -99,15 +101,15 @@ public class Historia {
                                                            Brasil, 
                                                            0, 
                                                            null);
-
+                    Brasil.perder();
                    perderterceirolugar.mostrar();                                        
                   Capitulo raiz = semifinal;
-                  semifinal.escolhas.add(new Escolha("Vitoria mesmo com os desfalques.",fin));
-                  semifinal.escolhas.add(new Escolha("Derrota humilhante de 7x1.",terceirolugar));
-                  fin.escolhas.add(new Escolha("Vitoria com estadio lotado.", campeao));
-                  fin.escolhas.add(new Escolha("Derrota decepcionate de 1x0.", vicecampeao));
-                  terceirolugar.escolhas.add(new Escolha("Vitoria com gol lindo de Renato Augusto", ganharterceirolugar));
-                  terceirolugar.escolhas.add(new Escolha("Derrota com placar de 3x0", perderterceirolugar));
+                  semifinal.adEscolha(new Escolha("Vitoria mesmo com os desfalques.",fin));
+                  semifinal.adEscolha(new Escolha("Derrota humilhante de 7x1.",terceirolugar));
+                  fin.adEscolha(new Escolha("Vitoria com estadio lotado.", campeao));
+                  fin.adEscolha(new Escolha("Derrota decepcionate de 1x0.", vicecampeao));
+                  terceirolugar.adEscolha(new Escolha("Vitoria com gol lindo de Renato Augusto", ganharterceirolugar));
+                  terceirolugar.adEscolha(new Escolha("Derrota com placar de 3x0", perderterceirolugar));
                   raiz.mostrar();
                   escolha.close();     
 
